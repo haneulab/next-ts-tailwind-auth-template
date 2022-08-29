@@ -1,8 +1,17 @@
-import '../styles/globals.css'
+/**
+ * type imports
+ */
 import type { AppProps } from 'next/app'
+import type { PageWithLayout } from '@typeDefs/pages'
 
-function MyApp({ Component, pageProps }: AppProps) {
-    return <Component {...pageProps} />
+interface PageWithLayoutProps extends AppProps {
+    Component: PageWithLayout
 }
 
-export default MyApp
+const Application = (props: PageWithLayoutProps) => {
+    const { Component, pageProps } = props
+    const getLayout = Component.getLayout || ((page) => page)
+    return getLayout(<Component {...pageProps} />)
+}
+
+export default Application

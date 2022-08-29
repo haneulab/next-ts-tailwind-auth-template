@@ -16,7 +16,7 @@
         "baseUrl": "src",
         "paths": {
             "@components/*": ["./components/*"],
-            "@constants": ["./constants.ts"],
+            "@constants": ["./constants/index.ts"],
             "@typeDefs/*": ["./types/*"],
             "@public/*": ["./public/*"]
         },
