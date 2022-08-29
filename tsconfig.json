@@ -16,6 +16,7 @@
         "baseUrl": "src",
         "paths": {
             "@components/*": ["./components/*"],
+            "@tailwindCss": ["./styles/index.css"],
             "@constants": ["./constants/index.ts"],
             "@typeDefs/*": ["./types/*"],
             "@public/*": ["./public/*"]

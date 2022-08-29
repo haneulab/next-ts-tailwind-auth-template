@@ -20,7 +20,7 @@ class MyDocument extends Document {
                         rel="stylesheet"
                     />
                 </Head>
-                <body className="w-full">
+                <body className="w-full bg-themeDark text-themeLight">
                     <Main />
                     <NextScript />
                 </body>

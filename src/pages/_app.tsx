@@ -1,4 +1,9 @@
 /**
+ * tailwind import
+ */
+import '@tailwindCss'
+
+/**
  * type imports
  */
 import type { AppProps } from 'next/app'
