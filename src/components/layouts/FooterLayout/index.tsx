@@ -6,7 +6,7 @@ const FooterLayout: React.FC = () => {
                     <p className="text-center opacity-75">
                         &copy; Template 2022. All Rights Reserved.
                     </p>
-                </div>  
+                </div>
             </section>
         </footer>
     )
