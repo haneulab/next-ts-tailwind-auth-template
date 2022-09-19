@@ -15,11 +15,20 @@
         "jsx": "preserve",
         "baseUrl": "src",
         "paths": {
-            "@components/*": ["./components/*"],
-            "@tailwindCss": ["./styles/index.css"],
-            "@constants": ["./constants/index.ts"],
+            /**
+            dynamic path alias
+            **/
+            "@core-components/*": ["./components/core/*"],
+            "@layout-components/*": ["./components/layouts/*"],
+            "@store/*": ["./store/*"],
+            "@lib/*": ["./lib/*"],
+            "@functions/*": ["./functions/*"],
             "@typeDefs/*": ["./types/*"],
-            "@public/*": ["./public/*"]
+            /**
+            static path alias
+            **/
+            "@tailwindCss": ["./styles/index.css"],
+            "@constants": ["./constants/index.ts"]
         },
         "incremental": true
     },

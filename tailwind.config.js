@@ -4,8 +4,11 @@ module.exports = {
     theme: {
         extend: {
             colors: {
-                themeDark: '#222',
-                themeLight: 'whitesmoke',
+                ddark: '#000000',
+                dlight: '#FFFFFF',
+            },
+            maxWidth: {
+                cutoff: '1440px',
             },
         },
     },

@@ -2,21 +2,24 @@
  * type imports
  */
 import type { PageWithLayout } from '@typeDefs/pages'
-/**
- * constant imports
- */
-import { MESSAGE } from '@constants'
+
 /**
  * component imports
  */
-import PrimaryLayout from '@components/layouts/PrimaryLayout'
-import MessageBar from '@components/shared/bars/MessageBar'
+import PrimaryLayout from '@layout-components/PrimaryLayout'
+import Example from '@core-components/Example'
 
 const About: PageWithLayout = () => {
     return (
-        <div>
-            <MessageBar message={MESSAGE} />
-        </div>
+        <section className="w-full min-h-screen flex flex-col justify-center">
+            <div className="w-full max-w-cutoff px-8 py-24 mx-auto">
+                <Example
+                    name="NextJS, TypeScript, and TailwindCSS Template"
+                    description="Welcome to About Page"
+                    variant="primary"
+                />
+            </div>
+        </section>
     )
 }
 

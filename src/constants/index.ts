@@ -1,21 +1,4 @@
-/**
- * list of all constant variable & exports
- */
-
-import type { MetaConfig } from '@typeDefs/components/layouts'
-import type { ThemeOptions } from '@typeDefs/constants'
-
-/**
- * @type ThemeOptions
- * @brief THEME is a constant for theme option, default set to string literal 'light'. Can be changed to 'dark'
- */
-export const THEME: ThemeOptions = 'light'
-
-/**
- * @type string
- * @brief Some example message, default set to 'Hello World!'
- */
-export const MESSAGE: string = 'Hello World!'
+import type { MetaConfig, StaticRoutes } from '@typeDefs/constants'
 
 /**
  * @type object
@@ -26,3 +9,20 @@ export const DEFAULT_META: MetaConfig = {
     description: 'This is a nextjs application.',
     keywords: ['NextJS', 'TailwindCSS', 'Next Auth', 'TypeScript'],
 }
+
+export const STATIC_ROUTES: StaticRoutes = [
+    {
+        href: '/',
+        text: 'Home',
+        isCurrentRoute(_router) {
+            return _router.pathname === '/'
+        },
+    },
+    {
+        href: '/about',
+        text: 'About',
+        isCurrentRoute(_router) {
+            return _router.pathname === '/about'
+        },
+    },
+]

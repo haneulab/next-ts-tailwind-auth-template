@@ -1,35 +1,30 @@
 /**
  * type imports
  */
-import type { MetaConfig } from '@typeDefs/components/layouts'
 import type { PageWithLayout } from '@typeDefs/pages'
-
-/**
- * constant imports
- */
-import { MESSAGE } from '@constants'
 
 /**
  * component imports
  */
-import PrimaryLayout from '@components/layouts/PrimaryLayout'
-import MessageBar from '@components/shared/bars/MessageBar'
+import PrimaryLayout from '@layout-components/PrimaryLayout'
+import Example from '@core-components/Example'
 
 const Home: PageWithLayout = () => {
     return (
-        <div>
-            <MessageBar message={MESSAGE} />
-        </div>
+        <section className="w-full">
+            <div className="w-full max-w-cutoff px-8 py-24 mx-auto">
+                <Example
+                    name="NextJS, TypeScript, and TailwindCSS Template"
+                    description="Welcome to Landing Page"
+                    variant="primary"
+                />
+            </div>
+        </section>
     )
 }
 
 Home.getLayout = (page) => {
-    const indexMetaOption: MetaConfig = {
-        title: 'My App | Home',
-        description: 'This is a home route.',
-        keywords: ['Home'],
-    }
-    return <PrimaryLayout metaOption={indexMetaOption}>{page}</PrimaryLayout>
+    return <PrimaryLayout>{page}</PrimaryLayout>
 }
 
 export default Home
