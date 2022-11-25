@@ -1,30 +1,41 @@
-/**
- * type imports
- */
-import type { PageWithLayout } from '@typeDefs/pages'
+// PAGE IMPORTS
+import PrimaryLayout from '@app/layouts/primary-layout'
+import { Send } from '@pkg/next'
+import { ExampleButton } from '@pkg/react'
+import type { GetServerSidePropsContext } from 'next'
+import type { PageWithLayout } from './pages'
 
-/**
- * component imports
- */
-import PrimaryLayout from '@layout-components/PrimaryLayout'
-import Example from '@core-components/Example'
+// SSR
+export const getServerSideProps = (_context: GetServerSidePropsContext) => {
+    return { props: {} }
+}
 
-const Home: PageWithLayout = () => {
+// PAGE
+const HomePage: PageWithLayout = () => {
     return (
-        <section className="w-full">
-            <div className="w-full max-w-cutoff px-8 py-24 mx-auto">
-                <Example
-                    name="NextJS, TypeScript, and TailwindCSS Template"
-                    description="Welcome to Landing Page"
-                    variant="primary"
+        <>
+            <section>
+                <h1>HomePage</h1>
+                <Send
+                    variant="blue"
+                    as={`/post`}
+                    label="See Post"
+                    {...{ pathname: `/post`, query: { id: '1' } }}
                 />
-            </div>
-        </section>
+                <ExampleButton
+                    variant="yellow"
+                    label="click me"
+                    onClick={() => alert('feautre not available.')}
+                />
+            </section>
+        </>
     )
 }
 
-Home.getLayout = (page) => {
+// PAGE LAYOUT
+HomePage.getLayout = (page) => {
     return <PrimaryLayout>{page}</PrimaryLayout>
 }
 
-export default Home
+// PAGE EXPORT
+export default HomePage

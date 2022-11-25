@@ -15,20 +15,15 @@
         "jsx": "preserve",
         "baseUrl": "src",
         "paths": {
-            /**
-            dynamic path alias
-            **/
-            "@core-components/*": ["./components/core/*"],
-            "@layout-components/*": ["./components/layouts/*"],
-            "@store/*": ["./store/*"],
-            "@lib/*": ["./lib/*"],
-            "@functions/*": ["./functions/*"],
-            "@typeDefs/*": ["./types/*"],
-            /**
-            static path alias
-            **/
-            "@tailwindCss": ["./styles/index.css"],
-            "@constants": ["./constants/index.ts"]
+            "@pkg/react": ["./packages/react/index.ts"],
+            "@pkg/next": ["./packages/next/index.ts"],
+            "@pkg/utils": ["./packages/utils/index.ts"],
+            "@pkg/_constants": ["./packages/_constants/index.ts"],
+            "@app/_constants": ["./apps/_constants/index.ts"],
+            "@app/react/*": ["./apps/react/*"],
+            "@app/layouts/*": ["./apps/layouts/*"],
+            "@app/types/*": ["./apps/types/*"],
+            "@css": ["./apps/styles/index.css"]
         },
         "incremental": true
     },

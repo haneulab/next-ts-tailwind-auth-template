@@ -1,22 +1,15 @@
-/**
- * tailwind import
- */
-import '@tailwindCss'
-
-/**
- * type imports
- */
+import '@css'
 import type { AppProps } from 'next/app'
-import type { PageWithLayout } from '@typeDefs/pages'
+import type { PageWithLayout } from './pages'
 
 interface PageWithLayoutProps extends AppProps {
     Component: PageWithLayout
 }
 
-const Application = (props: PageWithLayoutProps) => {
+const App = (props: PageWithLayoutProps) => {
     const { Component, pageProps } = props
     const getLayout = Component.getLayout || ((page) => page)
     return getLayout(<Component {...pageProps} />)
 }
 
-export default Application
+export default App
