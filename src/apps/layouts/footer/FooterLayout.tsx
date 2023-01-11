@@ -1,6 +1,6 @@
-import type { UI } from '@app/types/components'
+import { type RFC } from 'apps/types/declaration'
 
-const FooterLayout: UI = () => {
+const FooterLayout: RFC = () => {
     return (
         <footer>
             <div>footer</div>
