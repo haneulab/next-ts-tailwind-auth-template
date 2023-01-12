@@ -6,9 +6,9 @@ import MetaLayout from '../meta/MetaLayout'
 
 const PrimaryLayout: RFC<IPrimaryLayout> = ({
     children,
-    title = '',
-    description = '',
-    keywords = null,
+    title,
+    description,
+    keywords,
 }) => {
     return (
         <>
