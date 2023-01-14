@@ -1,10 +1,10 @@
-import '@css'
+import '@application/styles'
+import { type PageWithLayout } from '@application/types'
+import { type AppProps } from 'next/app'
 import {
     LanguageContextProvider,
     ThemeContextProvider,
 } from '@haneulab/react-apis'
-import { type PageWithLayout } from '@typeDefs'
-import type { AppProps } from 'next/app'
 
 interface PageWithLayoutProps extends AppProps {
     Component: PageWithLayout

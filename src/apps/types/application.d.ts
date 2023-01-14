@@ -2,20 +2,20 @@ import { type ReactNode, ComponentType, ReactElement } from 'react'
 import { type NextPage } from 'next'
 import { type CustomComponent } from '@haneulab/react-apis'
 
-interface MyAppGenericProps {
+export interface ApplicationGenericComponentProps {
     className?: string
     children?: ReactNode
 }
 
-export type MyAppComponent<Props extends {} = {}> = CustomComponent<
+export type ApplicationComponent<Props extends {} = {}> = CustomComponent<
     Props,
-    MyAppGenericProps
+    ApplicationGenericComponentProps
 >
 
-type GetLayoutProps = (_page: ReactElement) => ReactNode
+export type GetLayout = (_page: ReactElement) => ReactNode
 
 export interface IPageWithLayout {
-    getLayout?: GetLayoutProps
+    getLayout?: GetLayout
     layout?: ComponentType
 }
 export type PageWithLayout<P extends {} = {}> = NextPage<P> & IPageWithLayout

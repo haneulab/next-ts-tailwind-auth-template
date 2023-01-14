@@ -1,11 +1,7 @@
-import { MyAppComponent } from '@typeDefs'
+import { type ApplicationComponent } from '@application/types'
 
-const HeaderLayout: MyAppComponent = () => {
-    return (
-        <header>
-            <div>Header</div>
-        </header>
-    )
+const HeaderLayout: ApplicationComponent = () => {
+    return <header className="fixed top-0 z-40"></header>
 }
 
 export default HeaderLayout

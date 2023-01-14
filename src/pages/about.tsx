@@ -1,39 +1,18 @@
-import { useLanguage, useRoute, useTheme } from '@haneulab/react-apis'
-import { PrimaryLayout } from '@layouts/primary'
-import { type PageWithLayout } from '@typeDefs'
-import Link from 'next/link'
+import { type PageWithLayout } from '@application/types'
+import { type GetServerSidePropsContext } from 'next'
+import { PrimaryLayout } from '@application/components/layouts'
+
+const getServerSideProps = async (_: GetServerSidePropsContext) => {
+    return { props: {} }
+}
 
 const AboutPage: PageWithLayout = () => {
-    const { lang, onLanguageSwitch } = useLanguage()
-    const { theme, onThemeSwitch } = useTheme()
-    const { pathname, isRoute } = useRoute()
-
-    return (
-        <div>
-            <div>About Page</div>
-            <Link href={'/'}>
-                <a>Home</a>
-            </Link>
-            <div>
-                current - {pathname.current}
-                <br />
-                past - {pathname.previous}
-            </div>
-            <div>
-                <div>
-                    isCurrent Route About ?{' '}
-                    {isRoute('/about').current ? 'yes' : 'no'}
-                </div>
-                <div>
-                    isCurrent Route Home ? {isRoute('/').current ? 'yes' : 'no'}
-                </div>
-            </div>
-        </div>
-    )
+    return <>AboutPage</>
 }
 
 AboutPage.getLayout = (page) => {
     return <PrimaryLayout>{page}</PrimaryLayout>
 }
 
+export { getServerSideProps }
 export default AboutPage

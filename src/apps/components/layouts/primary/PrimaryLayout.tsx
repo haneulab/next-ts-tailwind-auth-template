@@ -1,10 +1,10 @@
 import { type IPrimaryLayout } from './Primary.types'
-import { type MyAppComponent } from '@typeDefs'
+import { type ApplicationComponent } from '@application/types'
 import { FooterLayout } from '../footer'
-import { HeaderLayout } from '../header'
 import { MetaLayout } from '../meta'
+import { HeaderLayout } from '../header'
 
-const PrimaryLayout: MyAppComponent<IPrimaryLayout> = ({
+const PrimaryLayout: ApplicationComponent<IPrimaryLayout> = ({
     children,
     title,
     description,

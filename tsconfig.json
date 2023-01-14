@@ -16,10 +16,12 @@
         "jsx": "preserve",
         "baseUrl": "src",
         "paths": {
-            "@css": ["./apps/styles/index.css"],
-            "@typeDefs": ["./apps/types/declaration.d.ts"],
-            "@layouts/*": ["./apps/components/layouts/*"],
-            "@core/*": ["./apps/components/core/*"]
+            "@application/styles": ["./apps/styles/index.css"],
+            "@application/types": ["./apps/types/index.d.ts"],
+            "@application/components/layouts": [
+                "./apps/components/layouts/index.ts"
+            ],
+            "@application/components/core": ["./apps/components/core/index.ts"]
         },
         "incremental": true
     },

@@ -1,9 +1,9 @@
 import Head from 'next/head'
 import { type IMetaLayout } from './MetaLayout.types'
-import { type MyAppComponent } from '@typeDefs'
+import { type ApplicationComponent } from '@application/types'
 import { metaLayoutMock } from './MetaLayout.mock'
 
-const MetaLayout: MyAppComponent<IMetaLayout> = ({
+const MetaLayout: ApplicationComponent<IMetaLayout> = ({
     title = metaLayoutMock.title ?? '',
     description = metaLayoutMock.description ?? '',
     keywords = metaLayoutMock.keywords ?? null,
