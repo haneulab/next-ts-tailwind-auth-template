@@ -1,6 +1,6 @@
-import { type RFC } from 'apps/types/declaration'
+import { MyAppComponent } from '@typeDefs'
 
-const HeaderLayout: RFC = () => {
+const HeaderLayout: MyAppComponent = () => {
     return (
         <header>
             <div>Header</div>

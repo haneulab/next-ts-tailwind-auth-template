@@ -1,10 +1,10 @@
 import { type IPrimaryLayout } from './Primary.types'
-import { type RFC } from 'apps/types/declaration'
-import FooterLayout from '../footer/FooterLayout'
-import HeaderLayout from '../header/HeaderLayout'
-import MetaLayout from '../meta/MetaLayout'
+import { type MyAppComponent } from '@typeDefs'
+import { FooterLayout } from '../footer'
+import { HeaderLayout } from '../header'
+import { MetaLayout } from '../meta'
 
-const PrimaryLayout: RFC<IPrimaryLayout> = ({
+const PrimaryLayout: MyAppComponent<IPrimaryLayout> = ({
     children,
     title,
     description,

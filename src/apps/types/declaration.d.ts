@@ -1,16 +1,16 @@
-import React, { type ReactNode, ComponentType, ReactElement } from 'react'
-import type { NextPage } from 'next'
+import { type ReactNode, ComponentType, ReactElement } from 'react'
+import { type NextPage } from 'next'
+import { type CustomComponent } from '@haneulab/react-apis'
 
-interface GenericComponentInterface {
+interface MyAppGenericProps {
     className?: string
     children?: ReactNode
 }
 
-type GenericRFC<ThisComponentProps extends object = {}> = React.FC<
-    GenericComponentInterface & ThisComponentProps
+export type MyAppComponent<Props extends {} = {}> = CustomComponent<
+    Props,
+    MyAppGenericProps
 >
-
-export type RFC<I extends object = {}> = GenericRFC<I>
 
 type GetLayoutProps = (_page: ReactElement) => ReactNode
 

@@ -16,7 +16,10 @@
         "jsx": "preserve",
         "baseUrl": "src",
         "paths": {
-            "@css": ["./apps/styles/index.css"]
+            "@css": ["./apps/styles/index.css"],
+            "@typeDefs": ["./apps/types/declaration.d.ts"],
+            "@layouts/*": ["./apps/components/layouts/*"],
+            "@core/*": ["./apps/components/core/*"]
         },
         "incremental": true
     },

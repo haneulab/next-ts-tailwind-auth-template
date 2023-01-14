@@ -1,9 +1,9 @@
-import { type RFC } from 'apps/types/declaration'
-import { type IMetaLayout } from './MetaLayout.types'
-import { metaLayoutMock } from './MetaLayout.mock'
 import Head from 'next/head'
+import { type IMetaLayout } from './MetaLayout.types'
+import { type MyAppComponent } from '@typeDefs'
+import { metaLayoutMock } from './MetaLayout.mock'
 
-const MetaLayout: RFC<IMetaLayout> = ({
+const MetaLayout: MyAppComponent<IMetaLayout> = ({
     title = metaLayoutMock.title ?? '',
     description = metaLayoutMock.description ?? '',
     keywords = metaLayoutMock.keywords ?? null,
