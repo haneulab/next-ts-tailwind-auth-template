@@ -5,4 +5,5 @@ export const metaLayoutMock: IMetaLayout = {
     description:
         'Scalable NextJs application template made by Haneul Choi with love.',
     keywords: ['NextJS', 'TailwindCSS', 'TypeScript'],
+    image: 'public/logo.png',
 }
