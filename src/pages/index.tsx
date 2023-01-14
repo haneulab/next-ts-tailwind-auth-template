@@ -1,9 +1,9 @@
+import Image from 'next/image'
+import Logo from 'public/logo.png'
 import { type PageWithLayout } from '@application/types'
 import { type GetServerSidePropsContext } from 'next'
 import { PrimaryLayout } from '@application/components/layouts'
 import { HeroCard } from '@application/components/core'
-import Logo from 'public/logo.png'
-import Image from 'next/image'
 
 const getServerSideProps = async (_: GetServerSidePropsContext) => {
     return { props: {} }

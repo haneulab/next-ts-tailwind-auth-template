@@ -4,7 +4,7 @@ import { type AppProps } from 'next/app'
 import {
     LanguageContextProvider,
     ThemeContextProvider,
-} from '@haneulab/react-apis'
+} from '@application/contexts'
 
 interface PageWithLayoutProps extends AppProps {
     Component: PageWithLayout

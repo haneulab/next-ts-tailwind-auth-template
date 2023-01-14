@@ -32,11 +32,6 @@
     minimatch "^3.1.2"
     strip-json-comments "^3.1.1"
 
-"@haneulab/react-apis@^0.0.11":
-  version "0.0.11"
-  resolved "https://npm.pkg.github.com/download/@haneulab/react-apis/0.0.11/ac115e8c8302fb23a235cf09a81b36b93c643889#ac115e8c8302fb23a235cf09a81b36b93c643889"
-  integrity sha512-okqyZITSK0Bh0pLASCC0Hb2o0B/pMQttCT2S97dYCGahpdXfdKs5S72Kxn/1kojTKTe8v0+ZS8UkhzxZBct7nA==
-
 "@humanwhocodes/config-array@^0.10.4":
   version "0.10.4"
   resolved "https://registry.yarnpkg.com/@humanwhocodes/config-array/-/config-array-0.10.4.tgz#01e7366e57d2ad104feea63e72248f22015c520c"

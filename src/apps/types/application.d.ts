@@ -1,6 +1,16 @@
 import { type ReactNode, ComponentType, ReactElement } from 'react'
 import { type NextPage } from 'next'
-import { type CustomComponent } from '@haneulab/react-apis'
+
+export type GenericProps<T extends {}> = {
+    [K in keyof T]: T[K]
+}
+
+export type GenericComponent<T extends {}> = React.FC<GenericProps<T>>
+
+export type CustomComponent<
+    ComponentProps extends {} = {},
+    DefineGenericProps extends {} = {}
+> = GenericComponent<ComponentProps & DefineGenericProps>
 
 export interface ApplicationGenericComponentProps {
     className?: string
