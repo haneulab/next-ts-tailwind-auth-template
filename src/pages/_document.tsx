@@ -5,7 +5,11 @@ class MyDocument extends Document {
         return (
             <Html lang="en">
                 <Head>
-                    {/* google font mount example */}
+                    {/* 
+                        ------------------------------
+                        | GOOGLE FONT API SCRIP TAGS |
+                        ------------------------------
+                    */}
                     <link
                         rel="preconnect"
                         href="https://fonts.googleapis.com"
@@ -16,11 +20,11 @@ class MyDocument extends Document {
                         crossOrigin="true"
                     />
                     <link
-                        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400&family=Nunito:wght@300;400;500;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500&display=swap"
+                        href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Inter:wght@200;300;400;500;600;700&family=Nanum+Brush+Script&family=Nanum+Myeongjo:wght@400;700&family=Nunito:wght@300;400;500;700&family=Sono:wght@200;300;400;500;600;700&display=swap"
                         rel="stylesheet"
                     />
                 </Head>
-                <body className="w-full relative">
+                <body className="w-full relative font-para[en]-nunito">
                     <Main />
                     <NextScript />
                 </body>

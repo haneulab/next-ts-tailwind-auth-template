@@ -1,6 +1,5 @@
+import { type IMetaLayout } from '../meta/MetaLayout.types'
+
 export interface IPrimaryLayout {
-    title?: string
-    description?: string
-    keywords?: string[]
-    image?: string
+    pageMeta: IMetaLayout
 }

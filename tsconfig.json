@@ -16,15 +16,14 @@
         "jsx": "preserve",
         "baseUrl": "src",
         "paths": {
-            "@application/styles": ["./apps/styles/index.css"],
-            "@application/types": ["./apps/types/index.d.ts"],
-            "@application/contexts": ["./apps/contexts/index.ts"],
-            "@application/hooks": ["./apps/hooks/index.ts"],
-            "@application/functions": ["./apps/functions/index.ts"],
-            "@application/components/layouts": [
-                "./apps/components/layouts/index.ts"
-            ],
-            "@application/components/core": ["./apps/components/core/index.ts"]
+            "@app-styles": ["./apps/styles/index.css"],
+            "@app-types": ["./apps/types/index.d.ts"],
+            "@app-contexts": ["./apps/contexts/index.ts"],
+            "@app-hooks": ["./apps/hooks/index.ts"],
+            "@app-functions": ["./apps/functions/index.ts"],
+            "@app-components/layouts": ["./apps/components/layouts/index.ts"],
+            "@app-components/core": ["./apps/components/core/index.ts"],
+            "@app-components/utils": ["./apps/components/utils/index.ts"]
         },
         "incremental": true
     },

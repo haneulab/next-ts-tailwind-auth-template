@@ -1,6 +1,6 @@
-import { type ApplicationComponent } from '@application/types'
+import { type RFC } from '@app-types'
 
-const HeaderLayout: ApplicationComponent = () => {
+const HeaderLayout: RFC = () => {
     return <header className="fixed top-0 z-40"></header>
 }
 

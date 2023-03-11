@@ -17,7 +17,7 @@ export interface ApplicationGenericComponentProps {
     children?: ReactNode
 }
 
-export type ApplicationComponent<Props extends {} = {}> = CustomComponent<
+export type RFC<Props extends {} = {}> = CustomComponent<
     Props,
     ApplicationGenericComponentProps
 >

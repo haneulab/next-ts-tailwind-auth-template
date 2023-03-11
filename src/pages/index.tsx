@@ -1,9 +1,8 @@
-import Image from 'next/image'
-import Logo from 'public/logo.png'
-import { type PageWithLayout } from '@application/types'
+import { type PageWithLayout } from '@app-types'
 import { type GetServerSidePropsContext } from 'next'
-import { PrimaryLayout } from '@application/components/layouts'
-import { HeroCard } from '@application/components/core'
+import { PrimaryLayout } from '@app-components/layouts'
+import { Box, BoxWrap, Switch, Text } from '@app-components/utils'
+import { classnames } from '@app-functions'
 
 const getServerSideProps = async (_: GetServerSidePropsContext) => {
     return { props: {} }
@@ -11,22 +10,35 @@ const getServerSideProps = async (_: GetServerSidePropsContext) => {
 
 const HomePage: PageWithLayout = () => {
     return (
-        <>
-            <div className="h-screen w-full flex flex-col justify-center items-center">
-                <section className="px-8 py-8 max-w-cutoff mx-auto">
-                    <HeroCard
-                        title="NextJs, TypeScript, and TailwindCSS Template"
-                        description="Please enjoy using this template, and build something that changes the world!"
-                        image={<Image src={Logo} alt="Logo Image" />}
-                    />
-                </section>
-            </div>
-        </>
+        <Box
+            className={classnames(
+                'h-screen flex flex-col justify-center items-center'
+            )}
+        >
+            <BoxWrap className="px-8 py-24 lg:py-28 w-full max-w-cutoff mx-auto flex flex-col items-center gap-y-4">
+                <Switch.Theme />
+                <Switch.Language />
+                <Text
+                    variant="h1"
+                    className="text-2xl md:text-3xl lg:text-4xl text-center font-bold"
+                >
+                    Hello World
+                </Text>
+                <Text variant="p">Nice To Meet You!</Text>
+            </BoxWrap>
+        </Box>
     )
 }
 
+const pageMeta = {
+    title: 'HomePage',
+    description: 'This is Homepage.',
+    keywords: ['some', 'key', 'words'],
+    image: 'public/image.png',
+}
+
 HomePage.getLayout = (page) => {
-    return <PrimaryLayout>{page}</PrimaryLayout>
+    return <PrimaryLayout pageMeta={pageMeta}>{page}</PrimaryLayout>
 }
 
 export { getServerSideProps }

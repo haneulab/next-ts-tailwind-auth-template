@@ -1,22 +1,13 @@
 import { type IPrimaryLayout } from './Primary.types'
-import { type ApplicationComponent } from '@application/types'
+import { type RFC } from '@app-types'
 import { FooterLayout } from '../footer'
 import { MetaLayout } from '../meta'
 import { HeaderLayout } from '../header'
 
-const PrimaryLayout: ApplicationComponent<IPrimaryLayout> = ({
-    children,
-    title,
-    description,
-    keywords,
-}) => {
+const PrimaryLayout: RFC<IPrimaryLayout> = ({ children, pageMeta }) => {
     return (
         <>
-            <MetaLayout
-                title={title}
-                description={description}
-                keywords={keywords}
-            />
+            <MetaLayout {...pageMeta} />
             <HeaderLayout />
             <main>{children}</main>
             <FooterLayout />
