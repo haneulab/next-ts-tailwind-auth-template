@@ -19,6 +19,7 @@
             "@app-styles": ["./apps/styles/index.css"],
             "@app-types": ["./apps/types/index.d.ts"],
             "@app-contexts": ["./apps/contexts/index.ts"],
+            "@app-libs": ["./apps/libs/index.ts"],
             "@app-hooks": ["./apps/hooks/index.ts"],
             "@app-functions": ["./apps/functions/index.ts"],
             "@app-components/layouts": ["./apps/components/layouts/index.ts"],

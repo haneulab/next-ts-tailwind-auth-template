@@ -1,34 +1,44 @@
-import { type PageWithLayout } from '@app-types'
-import { type GetServerSidePropsContext } from 'next'
+import { type GetStaticProps, type PageWithLayout } from '@app-types'
 import { PrimaryLayout } from '@app-components/layouts'
-import { Box, BoxWrap, Switch, Text } from '@app-components/utils'
-import { classnames } from '@app-functions'
 
-const getServerSideProps = async (_: GetServerSidePropsContext) => {
-    return { props: {} }
+/** DATA PROPS INTERFACE */
+/** PAGE DECLARATION */
+
+interface StaticDataProps {
+    name: string
+    description: string
 }
 
-const HomePage: PageWithLayout = () => {
+const HomePage: PageWithLayout<{
+    pageDataLoaded: boolean
+    pageData: StaticDataProps
+}> = ({ pageData, pageDataLoaded }) => {
     return (
-        <Box
-            className={classnames(
-                'h-screen flex flex-col justify-center items-center'
-            )}
-        >
-            <BoxWrap className="px-8 py-24 lg:py-28 w-full max-w-cutoff mx-auto flex flex-col items-center gap-y-4">
-                <Switch.Theme />
-                <Switch.Language />
-                <Text
-                    variant="h1"
-                    className="text-2xl md:text-3xl lg:text-4xl text-center font-bold"
-                >
-                    Hello World
-                </Text>
-                <Text variant="p">Nice To Meet You!</Text>
-            </BoxWrap>
-        </Box>
+        <>
+            {pageDataLoaded && pageData.description}
+            {!pageDataLoaded && 'Something Is Wrong.'}
+        </>
     )
 }
+
+/** GET STATIC PROPS */
+/** EXPORT GET STATIC PROPS  */
+
+const getStaticProps: GetStaticProps<StaticDataProps> = async (_ctx) => {
+    return {
+        props: {
+            pageData: {
+                name: 'Static Props',
+                description: 'Hello Index!',
+            },
+            pageDataLoaded: true,
+        },
+    }
+}
+export { getStaticProps }
+
+/** PAGE META OBJECT   */
+/** PAGE GET LAYOUT SETUP */
 
 const pageMeta = {
     title: 'HomePage',
@@ -41,5 +51,6 @@ HomePage.getLayout = (page) => {
     return <PrimaryLayout pageMeta={pageMeta}>{page}</PrimaryLayout>
 }
 
-export { getServerSideProps }
+/** PAGE EXPORTS */
+
 export default HomePage

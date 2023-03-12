@@ -1,5 +1,5 @@
 import { type ReactNode, ComponentType, ReactElement } from 'react'
-import { type NextPage } from 'next'
+import { type GetStaticPropsContext, type NextPage } from 'next'
 
 export type GenericProps<T extends {}> = {
     [K in keyof T]: T[K]
@@ -29,3 +29,7 @@ export interface IPageWithLayout {
     layout?: ComponentType
 }
 export type PageWithLayout<P extends {} = {}> = NextPage<P> & IPageWithLayout
+
+export type GetStaticProps<T extends {}> = (
+    _context: GetStaticPropsContext
+) => Promise<{ props: { pageData: T; pageDataLoaded: boolean } }>
