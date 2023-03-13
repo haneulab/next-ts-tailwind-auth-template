@@ -1,6 +1,6 @@
-import { type UserSchema } from 'typing'
-import { database } from 'backend/config/database'
 import { set, ref, get, child, update, remove } from 'firebase/database'
+import { type UserSchema } from 'typing'
+import { database } from 'backend/config'
 
 /** UTILITY FUNCTIONS */
 

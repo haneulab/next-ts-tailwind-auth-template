@@ -1,6 +1,6 @@
 import { type FirebaseApp } from 'firebase/app'
 import { getAuth } from 'firebase/auth'
-import { app } from './app'
+import { app } from 'backend/config'
 
 export const auth = initAuth(app)
 

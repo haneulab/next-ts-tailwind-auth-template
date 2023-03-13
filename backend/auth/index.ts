@@ -1,4 +1,4 @@
-import { auth } from 'backend/config/auth'
+import { auth } from 'backend/config'
 import { SignInResult } from 'typing'
 import { In } from './signin'
 import { Out } from './signout'

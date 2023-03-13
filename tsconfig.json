@@ -36,7 +36,7 @@
             "services/*": ["./services/*"],
 
             /** BACK END */
-            "backend/config/*": ["./backend/config/*"],
+            "backend/config": ["./backend/config/index.ts"],
             "backend/database": ["./backend/database/index.ts"],
             "backend/auth": ["./backend/auth/index.ts"]
         },
