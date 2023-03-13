@@ -1,4 +1,4 @@
-import { useUser } from 'hooks/auth.hook'
+import { useUser } from 'hooks'
 import Image from 'next/image'
 import { type RFC } from 'typing'
 

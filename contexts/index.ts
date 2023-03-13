@@ -1,3 +1,3 @@
-export * from './theme.context'
-export * from './language.context'
-export * from './auth.context'
+export * from './theme'
+export * from './language'
+export * from './auth'

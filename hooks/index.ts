@@ -1,3 +1,3 @@
-export * from './auth.hook'
-export * from './theme.hook'
-export * from './language.hook'
+export * from './auth'
+export * from './theme'
+export * from './language'

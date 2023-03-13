@@ -1,7 +1,7 @@
 import { MetaLayout, PrimaryLayout } from 'frontend/layouts'
-import { useUser } from 'hooks/auth.hook'
-import { type GetStaticProps, type PageWithLayout } from 'typing'
+import { useUser } from 'frontend/hooks'
 
+import { type GetStaticProps, type PageWithLayout } from 'typing'
 /** DATA PROPS INTERFACE */
 /** PAGE DECLARATION */
 

@@ -1,6 +1,7 @@
 import { Sign } from 'backend/auth'
+import { Connect } from 'backend/database'
 import { auth } from 'backend/config/auth'
-import { onAuthStateChanged, User } from 'firebase/auth'
+import { onAuthStateChanged } from 'firebase/auth'
 import { createContext, useEffect, useState } from 'react'
 import {
     AuthContextProiderProps,
@@ -9,7 +10,6 @@ import {
     UserSchema,
 } from 'typing'
 import { useRouter } from 'next/router'
-import { Connect } from 'backend/database'
 
 const AuthContext = createContext<AuthContextProps>({
     user: null,
