@@ -14,17 +14,31 @@
         "resolveJsonModule": true,
         "isolatedModules": true,
         "jsx": "preserve",
-        "baseUrl": "src",
+        "baseUrl": ".",
         "paths": {
-            "@app-styles": ["./apps/styles/index.css"],
-            "@app-types": ["./apps/types/index.d.ts"],
-            "@app-contexts": ["./apps/contexts/index.ts"],
-            "@app-libs": ["./apps/libs/index.ts"],
-            "@app-hooks": ["./apps/hooks/index.ts"],
-            "@app-functions": ["./apps/functions/index.ts"],
-            "@app-components/layouts": ["./apps/components/layouts/index.ts"],
-            "@app-components/core": ["./apps/components/core/index.ts"],
-            "@app-components/utils": ["./apps/components/utils/index.ts"]
+            /** FRONT END */
+            "typing": ["./types/index.d.ts"],
+
+            /** STYLES */
+            "frontend/styles": ["./styles/index.css"],
+
+            /** COMPONENTS */
+            "frontend/layouts": ["./components/layouts/index.ts"],
+            "frontend/core": ["./components/core/index.ts"],
+            "frontend/utils": ["./components/utils/index.ts"],
+
+            /** CONTEXTS & HOOKS */
+            "frontend/contexts": ["./contexts/index.ts"],
+            "frontend/hooks": ["./hooks/index.ts"],
+            "frontend/functions": ["./functions/index.ts"],
+
+            /** SERVICE FUNCTIONS */
+            "services/*": ["./services/*"],
+
+            /** BACK END */
+            "backend/config/*": ["./backend/config/*"],
+            "backend/database": ["./backend/database/index.ts"],
+            "backend/auth": ["./backend/auth/index.ts"]
         },
         "incremental": true
     },
