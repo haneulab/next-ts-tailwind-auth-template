@@ -6,33 +6,33 @@ import { MetaLayout, PrimaryLayout } from '@view/layouts'
 import { useUser } from '@view/hooks'
 import { pageMeta } from '@data/meta'
 
-const SignInPage: PageWithLayout = () => {
+const OrderPage: PageWithLayout = () => {
     const router = useRouter()
     const { user } = useUser()
 
     useEffect(() => {
-        if (user) {
-            if (router.query.redirect) {
-                router.push(router.query.redirect as string)
-            } else {
-                router.push('/')
-            }
+        if (!user) {
+            router.push({
+                pathname: '/signin',
+                query: {
+                    redirect: '/order',
+                },
+            })
         }
-    }, [user])
+    }, [])
 
     return (
         <>
-            <MetaLayout {...pageMeta('signin')} />
+            <MetaLayout {...pageMeta('order', user)} />
             <div className="flex flex-col items-center justify-center w-full h-screen bg-white">
-                <h3>SignInPage</h3>
-                <button>Sign In</button>
+                <h3>OrderPage</h3>
             </div>
         </>
     )
 }
 
-SignInPage.getLayout = (page) => {
+OrderPage.getLayout = (page) => {
     return <PrimaryLayout>{page}</PrimaryLayout>
 }
 
-export default SignInPage
+export default OrderPage

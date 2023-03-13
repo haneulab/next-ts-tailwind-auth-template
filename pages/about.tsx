@@ -1,55 +1,23 @@
-import { type GetStaticProps, type PageWithLayout } from 'typing'
-import { MetaLayout, PrimaryLayout } from 'frontend/layouts'
-import { useUser } from 'frontend/hooks'
+import { type PageWithLayout } from '@typing'
+import { MetaLayout, PrimaryLayout } from '@view/layouts'
+import { useUser } from '@view/hooks'
+import { pageMeta } from '@data/meta'
 
-/** DATA PROPS INTERFACE */
-/** PAGE DECLARATION */
-
-interface StaticDataProps {
-    name: string
-    description: string
-}
-
-const AboutPage: PageWithLayout<{
-    pageDataLoaded: boolean
-    pageData: StaticDataProps
-}> = ({ pageData, pageDataLoaded }) => {
+const AboutPage: PageWithLayout = () => {
     const { user } = useUser()
 
     return (
         <>
-            <MetaLayout
-                title={user ? `About ${user.name} | My App` : 'About | My App'}
-                description="This app integrates NextJs, TypeScript, TailwindCSS, and Firebase."
-                keywords={['NextJs', 'TypeScript', 'TailwindCSS', 'Firebase']}
-            />
-            {pageDataLoaded && pageData.description}
-            {!pageDataLoaded && 'Something Is Wrong.'}
+            <MetaLayout {...pageMeta('about', user)} />
+            <div className="flex flex-col items-center justify-center w-full h-screen bg-white">
+                <h3>AboutPage</h3>
+            </div>
         </>
     )
 }
-
-/** GET STATIC PROPS */
-/** EXPORT GET STATIC PROPS  */
-
-const getStaticProps: GetStaticProps<StaticDataProps> = async (_ctx) => {
-    return {
-        props: {
-            pageData: {
-                name: 'Static Props',
-                description: 'Hello About!',
-            },
-            pageDataLoaded: true,
-        },
-    }
-}
-export { getStaticProps }
-
-/** PAGE GET LAYOUT SETUP */
 
 AboutPage.getLayout = (page) => {
     return <PrimaryLayout>{page}</PrimaryLayout>
 }
 
-/** PAGE EXPORTS */
 export default AboutPage

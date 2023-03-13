@@ -17,28 +17,29 @@
         "baseUrl": ".",
         "paths": {
             /** FRONT END */
-            "typing": ["./types/index.d.ts"],
+            "@typing": ["./@typing/index.d.ts"],
+            "@data/*": ["./@data/*"],
 
             /** STYLES */
-            "frontend/styles": ["./styles/index.css"],
+            "@view/styles": ["./@view/styles/index.css"],
 
             /** COMPONENTS */
-            "frontend/layouts": ["./components/layouts/index.ts"],
-            "frontend/core": ["./components/core/index.ts"],
-            "frontend/utils": ["./components/utils/index.ts"],
+            "@view/layouts": ["./@view/components/layouts/index.ts"],
+            "@view/core": ["./@view/components/core/index.ts"],
+            "@view/utils": ["./@view/components/utils/index.ts"],
 
             /** CONTEXTS & HOOKS */
-            "frontend/contexts": ["./contexts/index.ts"],
-            "frontend/hooks": ["./hooks/index.ts"],
-            "frontend/functions": ["./functions/index.ts"],
+            "@view/contexts": ["./@view/contexts/index.ts"],
+            "@view/hooks": ["./@view/hooks/index.ts"],
+            "@view/functions": ["./@view/functions/index.ts"],
 
             /** SERVICE FUNCTIONS */
-            "services/*": ["./services/*"],
+            "@apis/*": ["./@apis/*"],
 
             /** BACK END */
-            "backend/config": ["./backend/config/index.ts"],
-            "backend/database": ["./backend/database/index.ts"],
-            "backend/auth": ["./backend/auth/index.ts"]
+            "@fire/config": ["./@fire/config/index.ts"],
+            "@fire/database/*": ["./@fire/database/*"],
+            "@fire/auth": ["@fire/auth/index.ts"]
         },
         "incremental": true
     },

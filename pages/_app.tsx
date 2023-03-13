@@ -1,12 +1,11 @@
-/* eslint-disable react/display-name */
-import 'frontend/styles'
-import { type PageWithLayout } from 'typing'
 import { type AppProps } from 'next/app'
+import '../@view/styles/index.css'
+import { type PageWithLayout } from '@typing'
 import {
     LanguageContextProvider,
     ThemeContextProvider,
     AuthContextProvider,
-} from 'frontend/contexts'
+} from '@view/contexts'
 
 interface PageWithLayoutProps extends AppProps {
     Component: PageWithLayout

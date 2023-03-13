@@ -4,7 +4,6 @@ const nextConfig = {
     swcMinify: true,
     trailingSlash: true,
     images: {
-        /** Google Sign In User Profile Image Domain */
         domains: ['lh3.googleusercontent.com'],
     },
 }
