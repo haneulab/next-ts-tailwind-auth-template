@@ -5,5 +5,4 @@ export interface IMetaLayout {
     image?: string
 }
 
-export interface IPrimaryLayout {
-}
+export interface IPrimaryLayout {}
