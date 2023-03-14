@@ -17,7 +17,7 @@ class InMethod {
 
     async Go(auth: Auth, providerOption = provider) {
         if (exsitCurrentUser(auth)) {
-            throw Error('[SignInError] You are already signed in.')
+            throw Error('You are already signed in.')
         }
         return await signInWithPopup(auth, providerOption.google).then(
             async (result) => {
@@ -25,7 +25,6 @@ class InMethod {
                     GoogleAuthProvider.credentialFromResult(result)
                 const token = credential.accessToken
                 const user = result.user
-                console.log('[SignInSuccess] Successfully signed in.')
                 await this.Retrieve(user)
                 return {
                     credential,
@@ -38,9 +37,6 @@ class InMethod {
     async Retrieve(user: User) {
         return await getUser(user.uid).then(async (arg) => {
             if (arg) {
-                console.log(
-                    '[RetriveSuccess] Successfully retrieved user data.'
-                )
                 return arg
             }
             let newUser: UserSchema = {

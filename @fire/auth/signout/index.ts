@@ -6,10 +6,9 @@ class OutMethod {
 
     async Go(auth: Auth) {
         if (!exsitCurrentUser(auth)) {
-            throw Error('[SignOutError] You are already signed out.')
+            throw Error('You are already signed out.')
         }
         await signOut(auth)
-        console.log('[SignOutSuccess] Successfully signed out.')
     }
 }
 

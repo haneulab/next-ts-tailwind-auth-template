@@ -1,5 +1,8 @@
 import { createContext, useEffect, useState } from 'react'
-import { LanguageContextProviderProps, LanguageOptions } from '@typing'
+import {
+    type LanguageContextProviderProps,
+    type LanguageOptions,
+} from '@typing'
 
 const LanguageContext = createContext<{
     lang: LanguageOptions

@@ -38,7 +38,7 @@
 
             /** BACK END */
             "@fire/config": ["./@fire/config/index.ts"],
-            "@fire/database/*": ["./@fire/database/*"],
+            "@fire/database": ["./@fire/database/index.ts"],
             "@fire/auth": ["@fire/auth/index.ts"]
         },
         "incremental": true

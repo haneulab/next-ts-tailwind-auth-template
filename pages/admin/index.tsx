@@ -13,7 +13,7 @@ interface ServerDataProps {
 }
 
 const getServerSideProps = async (ctx: GetServerSidePropsContext) => {
-    const { query } = ctx
+    const { query, res } = ctx
 
     const { uid, email } = query as {
         uid: string | null
@@ -67,17 +67,12 @@ const AdminPage: PageWithLayout<ServerDataProps> = ({ verified, message }) => {
     const router = useRouter()
     const { user } = useUser()
 
-    // const [refresh, setRefresh] = useState<boolean>(false)
-
-    // useEffect(() => {
-    //     setRefresh(typeof verified === 'boolean' && typeof message === 'string')
-    // }, [verified, message])
-
+    /** UID, EMAIL REVALIDATE ON BROWSER REFRESH */
     useEffect(() => {
         if (user) {
             router.replace(
                 {
-                    pathname: router.pathname,
+                    pathname: router.asPath,
                     query: {
                         uid: user.id,
                         email: user.email,
@@ -85,13 +80,6 @@ const AdminPage: PageWithLayout<ServerDataProps> = ({ verified, message }) => {
                 },
                 '/admin'
             )
-        } else {
-            router.push({
-                pathname: '/signin',
-                query: {
-                    redirect: '/admin',
-                },
-            })
         }
     }, [])
 
@@ -100,13 +88,20 @@ const AdminPage: PageWithLayout<ServerDataProps> = ({ verified, message }) => {
             <MetaLayout {...pageMeta('admin', user)} />
             {verified ? (
                 <div className="flex flex-col items-center justify-center w-full h-screen bg-white">
-                    <h3>AdminPage</h3>
-                    <p>You are the admin!</p>
+                    <div className="flex flex-col items-center justify-center w-full h-screen bg-white">
+                        <h3 className="text-xl font-bold lg:text-2xl">
+                            AdminPage
+                        </h3>
+                        <p>This is AdminPage : Public</p>
+                    </div>
                 </div>
             ) : (
                 <div className="flex flex-col items-center justify-center w-full h-screen bg-white">
-                    <h3>AdminPage</h3>
-                    <p>{message}</p>
+                    <h3 className="text-xl font-bold lg:text-2xl">AdminPage</h3>
+                    <p>This is AdminPage : Public</p>
+                    <p>
+                        Message From Server : <strong>{message}</strong>
+                    </p>
                 </div>
             )}
         </>

@@ -1,58 +1,67 @@
 import { type RFC } from '@typing'
+import { classnames } from '@view/functions'
 import { useLanguage, useUser } from '@view/hooks'
-import { Switch } from '@view/utils'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
+import { useEffect } from 'react'
 
 const HeaderLayout: RFC = () => {
     const { lang } = useLanguage()
     const { sign, user } = useUser()
+    const router = useRouter()
+
+    useEffect(() => {
+        if (user) {
+            router.replace(router.asPath)
+        }
+    }, [])
 
     return (
-        <header className="fixed top-0 z-40 w-full px-8 backdrop-blur-sm">
-            <section className="flex flex-col items-center">
-                <h1 className="block px-8 pt-6 mx-auto mb-2 w-max">
+        <header
+            className={classnames(
+                'fixed top-0 left-0 flex items-center justify-between w-full px-8 py-4 mx-auto lg:px-20 2xl:px-40',
+                user ? 'bg-neutral-800 text-white' : 'bg-white text-neutral-800'
+            )}
+        >
+            <div className="flex items-center gap-x-4">
+                <h1 className="text-lg font-bold lg:text-xl font-head-main">
                     <Link href={'/'}>
-                        <a className="font-bold font-para[ko]-batang text-2xl md:text-3xl lg:text-4xl">
-                            {lang === 'en' ? 'BanchanBox' : '반찬박스'}
-                        </a>
+                        <a>My App</a>
                     </Link>
                 </h1>
-                <ul className="flex items-center px-8 py-4 text-white rounded-lg bg-sky-400 gap-x-4 drop-shadow-md font-head[en]-inter font-medium">
-                    <Switch.Language />
-                    {!user && (
-                        <button
-                            className="transition-smooth lg:hover:opacity-60"
-                            onClick={sign.in}
-                        >
-                            {lang === 'en' ? 'Sign In' : '로그인'}
-                        </button>
-                    )}
-                    {user && (
-                        <button
-                            className="transition-smooth lg:hover:opacity-60"
-                            onClick={sign.out}
-                        >
-                            {lang === 'en' ? 'Sign Out' : '로그아웃'}
-                        </button>
-                    )}
-                    {user && user.isAdmin && (
-                        <Link
-                            href={{
-                                pathname: '/admin',
-                                query: {
-                                    uid: user.id,
-                                    email: user.email,
-                                },
-                            }}
-                            as={'/admin'}
-                        >
-                            <a className="transition-smooth lg:hover:opacity-60">
-                                {lang === 'en' ? 'Manage' : '관리'}
-                            </a>
-                        </Link>
-                    )}
-                </ul>
-            </section>
+                <button
+                    onClick={user ? sign.out : sign.in}
+                    className="px-4 py-2 text-sm font-medium border font-para-main"
+                >
+                    {user ? 'Sign Out' : 'Sign In'}
+                </button>
+                {user && <p className="font-para-sub">Hello, {user.name}</p>}
+            </div>
+
+            <nav className="flex items-center gap-x-4">
+                {!user && (
+                    <Link href={'/signin'}>
+                        <a>SignIn</a>
+                    </Link>
+                )}
+                <Link href={'/private'}>
+                    <a>Private</a>
+                </Link>
+                <Link href={'/public'}>
+                    <a>Public</a>
+                </Link>
+                {user && user.isAdmin && (
+                    <Link
+                        href={{
+                            pathname: '/admin',
+                            query: { uid: user.id, email: user.email },
+                        }}
+                        as="/admin"
+                    >
+                        <a>Admin</a>
+                    </Link>
+                )}
+            </nav>
         </header>
     )
 }

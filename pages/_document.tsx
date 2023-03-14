@@ -24,7 +24,7 @@ class MyDocument extends Document {
                         rel="stylesheet"
                     />
                 </Head>
-                <body className="w-full relative font-para[en]-nunito">
+                <body className="relative w-full font-para-main">
                     <Main />
                     <NextScript />
                 </body>

@@ -3,21 +3,22 @@ import { MetaLayout, PrimaryLayout } from '@view/layouts'
 import { useUser } from '@view/hooks'
 import { pageMeta } from '@data/meta'
 
-const MenuPage: PageWithLayout = () => {
+const PublicPage: PageWithLayout = () => {
     const { user } = useUser()
 
     return (
         <>
-            <MetaLayout {...pageMeta('menu', user)} />
+            <MetaLayout {...pageMeta('public', user)} />
             <div className="flex flex-col items-center justify-center w-full h-screen bg-white">
-                <h3>MenuPage</h3>
+                <h3 className="text-xl font-bold lg:text-2xl">Public Page</h3>
+                <p>This is PublicPage : Public</p>
             </div>
         </>
     )
 }
 
-MenuPage.getLayout = (page) => {
+PublicPage.getLayout = (page) => {
     return <PrimaryLayout>{page}</PrimaryLayout>
 }
 
-export default MenuPage
+export default PublicPage

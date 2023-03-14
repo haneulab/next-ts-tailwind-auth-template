@@ -1,5 +1,4 @@
 import { auth } from '@fire/config'
-import { SignInResult } from '@typing'
 import { In } from './signin'
 import { Out } from './signout'
 
@@ -9,25 +8,34 @@ class SignMethod {
 
     constructor() {}
 
-    async In(
-        success: (_result: SignInResult | undefined) => void,
-        fail: (_error: string) => void
-    ) {
-        await this.in
-            .Go(auth)
-            .then((result) => {
-                if (result) {
-                    success(result as unknown as SignInResult)
-                } else {
-                    throw new Error(
-                        '[SignInError] Missing usser crediential, token, and user object.'
-                    )
-                }
-            })
-            .catch(fail)
+    async In() {
+        console.log('[App] SignIn Started.')
+        await this.in.Go(auth)
+        console.log('[App] SignIn Completed.')
     }
-    async Out(success: () => void, fail: (_error: string) => void) {
-        await this.out.Go(auth).then(success).catch(fail)
+    async Out() {
+        console.log('[App] SignOut Started.')
+        await this.out.Go(auth)
+        console.log('[App] SignOut Completed.')
+    }
+
+    private _LogFail(type: 'SignIn' | 'SignOut', message: string): void {
+        console.log(`[${type}Fail] ${message}`)
+    }
+    private _LogSuccess(type: 'SignIn' | 'SignOut', message: string): void {
+        console.log(`[${type}Success] ${message}`)
+    }
+
+    public Log(
+        result: boolean,
+        type: 'SignIn' | 'SignOut',
+        message: string
+    ): void {
+        if (result) {
+            this._LogSuccess(type, message)
+        } else {
+            this._LogFail(type, message)
+        }
     }
 }
 

@@ -1,4 +1,4 @@
-import { NextApiRequest, NextApiResponse } from 'next'
+import { type NextApiRequest, type NextApiResponse } from 'next'
 import dotenv from 'dotenv'
 import { verify } from '@apis/admin'
 

@@ -39,6 +39,7 @@ export interface AuthContextProps {
         in: () => void
         out: () => void
     }
+    isLoaded: boolean
 }
 export interface AuthContextProiderProps {
     children: ReactNode

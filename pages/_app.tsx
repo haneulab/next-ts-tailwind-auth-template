@@ -1,5 +1,5 @@
+import '@view/styles/index.css'
 import { type AppProps } from 'next/app'
-import '../@view/styles/index.css'
 import { type PageWithLayout } from '@typing'
 import {
     LanguageContextProvider,

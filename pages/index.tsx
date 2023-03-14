@@ -9,7 +9,8 @@ const HomePage: PageWithLayout = () => {
         <>
             <MetaLayout {...pageMeta('index', user)} />
             <div className="flex flex-col items-center justify-center w-full h-screen bg-white">
-                <h3>HomePage</h3>
+                <h3 className="text-xl font-bold lg:text-2xl">HomePage</h3>
+                <p>This is HomePage : Public</p>
             </div>
         </>
     )

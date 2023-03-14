@@ -1,6 +1,6 @@
 import { set, ref, get, child, update, remove } from 'firebase/database'
-import { type UserSchema } from '@typing'
 import { database } from '@fire/config'
+import { type UserSchema } from '@typing'
 
 /** UTILITY FUNCTIONS */
 
@@ -29,31 +29,46 @@ async function removeUser(UserId: UserSchema['id']) {
 }
 
 class UserMethods {
-    constructor() {}
+    constructor(public name: 'users' = 'users') {
+        this.name = name
+    }
 
     /** @param arg: user's uniqee id */
-    async Get(
-        arg: UserSchema['id'],
-        success: (_arg: UserSchema) => void,
-        fail: (_error: any) => void
-    ) {
-        await getUser(arg).then(success).catch(fail)
+    public async Get(arg: UserSchema['id']) {
+        console.log(`[App] DatabaseGet['${this.name}'] Started.`)
+        const user = await getUser(arg)
+        console.log(`[App] DatabaseGet['${this.name}'] Completed.`)
+        return user
     }
     /** @param arg: user's object as {typeof UserSchema} */
-    async Set(arg: UserSchema, success: () => void, fail: (_error) => void) {
-        await setUser(arg).then(success).catch(fail)
+    public async Set(arg: UserSchema) {
+        console.log(`[App] DatabaseSet['${this.name}'] Started.`)
+        await setUser(arg)
+        console.log(`[App] DatabaseSet['${this.name}'] Completed.`)
     }
     /** @param arg: updated user's object as {typeof UserSchema} */
-    async Update(arg: UserSchema, success: () => void, fail: (_error) => void) {
-        await updateUser(arg).then(success).catch(fail)
+    public async Update(arg: UserSchema) {
+        console.log(`[App] DatabaseUpdated['${this.name}'] Started.`)
+        await updateUser(arg)
+        console.log(`[App] DatabaseUpdated['${this.name}'] Completed..`)
     }
     /** @param arg: user's uniqee id */
-    async Remove(
-        arg: UserSchema['id'],
-        success: () => void,
-        fail: (_error) => void
-    ) {
-        await removeUser(arg).then(success).catch(fail)
+    public async Remove(arg: UserSchema['id']) {
+        console.log(`[App] DatabaseRemove['${this.name}'] Started.`)
+        await removeUser(arg)
+        console.log(`[App] DatabaseRemove['${this.name}'] Completed.`)
+    }
+    /** @param result: boolean @param type: Get, Set, Update, Remove. @parem message: string */
+    public Log(
+        result: boolean,
+        type: 'Get' | 'Set' | 'Update' | 'Remove',
+        message: string
+    ): void {
+        if (result) {
+            console.log(`[Database${type}Success]['${this.name}'] ${message}`)
+        } else {
+            console.log(`[Database${type}Fail]['${this.name}'] ${message}`)
+        }
     }
 }
 

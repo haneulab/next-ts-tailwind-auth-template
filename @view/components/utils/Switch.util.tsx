@@ -1,6 +1,7 @@
 import { type RFC } from '@typing'
 import { useLanguage, useTheme } from '@view/hooks'
 import { MdLanguage } from 'react-icons/md'
+
 export const Theme: RFC = () => {
     const { theme, onThemeSwitch } = useTheme()
 
