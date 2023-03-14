@@ -15,7 +15,7 @@ const provider = {
 class InMethod {
     constructor() {}
 
-    async Go(auth: Auth, providerOption = provider) {
+    public async Go(auth: Auth, providerOption = provider) {
         if (exsitCurrentUser(auth)) {
             throw Error('You are already signed in.')
         }
@@ -34,7 +34,7 @@ class InMethod {
             }
         )
     }
-    async Retrieve(user: User) {
+    public async Retrieve(user: User) {
         return await getUser(user.uid).then(async (arg) => {
             if (arg) {
                 return arg

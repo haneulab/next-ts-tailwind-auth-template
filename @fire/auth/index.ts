@@ -8,12 +8,12 @@ class SignMethod {
 
     constructor() {}
 
-    async In() {
+    public async In() {
         console.log('[App] SignIn Started.')
         await this.in.Go(auth)
         console.log('[App] SignIn Completed.')
     }
-    async Out() {
+    public async Out() {
         console.log('[App] SignOut Started.')
         await this.out.Go(auth)
         console.log('[App] SignOut Completed.')

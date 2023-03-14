@@ -4,7 +4,7 @@ import { exsitCurrentUser } from '../observer'
 class OutMethod {
     constructor() {}
 
-    async Go(auth: Auth) {
+    public async Go(auth: Auth) {
         if (!exsitCurrentUser(auth)) {
             throw Error('You are already signed out.')
         }
