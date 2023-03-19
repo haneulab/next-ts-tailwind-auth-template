@@ -15,7 +15,7 @@ class MyDocument extends Document {
                         rel="stylesheet"
                     />
                 </Head>
-                <body className="w-full text-white bg-black font-sand">
+                <body className="relative w-full text-white bg-black font-sand">
                     <Main />
                     <NextScript />
                 </body>

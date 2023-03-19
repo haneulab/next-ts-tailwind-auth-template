@@ -9,7 +9,6 @@
         "plugin:@typescript-eslint/recommended",
         "plugin:react/recommended"
     ],
-    "plugins": ["@typescript-eslint"],
     "globals": {
         "React": "readonly"
     },

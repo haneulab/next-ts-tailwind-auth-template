@@ -1,11 +1,18 @@
-import { type LayoutRFC } from './types'
+import { type ILayout } from './types'
+import dynamic from 'next/dynamic'
 
-const Layout: LayoutRFC = ({ children }) => {
+const Meta = dynamic(() => import('./Meta'))
+const Header = dynamic(() => import('./Header'))
+const Footer = dynamic(() => import('./Footer'))
+
+const Layout = (props: ILayout) => {
     return (
-        <div>
-            <div>Layout</div>
-            {children}
-        </div>
+        <>
+            <Meta />
+            <Header />
+            {props.children ?? null}
+            <Footer />
+        </>
     )
 }
 export default Layout

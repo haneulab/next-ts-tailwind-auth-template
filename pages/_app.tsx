@@ -1,7 +1,4 @@
+import App from '@nextjs-app/app'
 import '../styles/index.css'
 
-const app = ({ Component, pageProps }) => {
-    return <Component {...pageProps} />
-}
-
-export default app
+export default App
