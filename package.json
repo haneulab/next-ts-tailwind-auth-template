@@ -1,6 +1,9 @@
 {
     "name": "next-tailwind-ts",
     "version": "0.1.0",
+    "workspaces": [
+        "packages/**"
+    ],
     "private": true,
     "engines": {
         "npm": "Please use yarn",
@@ -9,7 +12,7 @@
     },
     "engineStrict": true,
     "scripts": {
-        "dev": "next dev",
+        "dev": " open http://localhost:3000 && cross-env NODE_OPTIONS=' - insepct' next dev",
         "build": "next build",
         "start": "next start",
         "lint": "next lint",
@@ -31,6 +34,7 @@
         "@types/react-dom": "^18.0.11",
         "@typescript-eslint/eslint-plugin": "^5.55.0",
         "autoprefixer": "^10.4.14",
+        "cross-env": "^7.0.3",
         "eslint": "^8.36.0",
         "eslint-config-next": "^13.2.4",
         "eslint-config-prettier": "^8.7.0",

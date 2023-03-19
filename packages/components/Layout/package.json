@@ -1,0 +1,5 @@
+{
+    "name": "@nextjs-components/layout",
+    "main": "index.ts",
+    "version": "1.0.0"
+}
