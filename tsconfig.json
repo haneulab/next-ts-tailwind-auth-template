@@ -14,17 +14,8 @@
         "resolveJsonModule": true,
         "isolatedModules": true,
         "jsx": "preserve",
-        "baseUrl": "src",
-        "paths": {
-            "@app-styles": ["./apps/styles/index.css"],
-            "@app-types": ["./apps/types/index.d.ts"],
-            "@app-contexts": ["./apps/contexts/index.ts"],
-            "@app-hooks": ["./apps/hooks/index.ts"],
-            "@app-functions": ["./apps/functions/index.ts"],
-            "@app-components/layouts": ["./apps/components/layouts/index.ts"],
-            "@app-components/core": ["./apps/components/core/index.ts"],
-            "@app-components/utils": ["./apps/components/utils/index.ts"]
-        },
+        "baseUrl": ".",
+        "paths": {},
         "incremental": true
     },
     "exclude": ["node_modules"],
