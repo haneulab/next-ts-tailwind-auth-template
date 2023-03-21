@@ -1,5 +1,5 @@
 {
-    "name": "next-tailwind-ts",
+    "name": "nextuse",
     "version": "0.1.0",
     "workspaces": [
         "packages/**"
@@ -21,7 +21,7 @@
         "prepare": "husky install"
     },
     "dependencies": {
-        "next": "^12.3.4",
+        "next": "^13.0.1",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
         "react-icons": "^4.8.0"

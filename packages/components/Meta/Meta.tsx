@@ -1,7 +1,7 @@
-import type { IMeta } from './Meta.types'
+import type {IMeta} from "./Meta.types"
 
 const Meta = (props: IMeta) => {
-    return <></>
+	return <></>
 }
 
 export default Meta

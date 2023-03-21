@@ -1,3 +1,3 @@
 export interface IFooter {
-    id?: string
+	id?: string
 }

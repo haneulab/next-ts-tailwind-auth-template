@@ -1,5 +1,5 @@
 {
-"name": "@nextapp/layout",
-"main": "index.ts",
-"version": "1.0.0"
+	"name": "@nextapp/Layout",
+	"main": "index.ts",
+	"version":"1.0.0"
 }

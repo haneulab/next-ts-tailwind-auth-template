@@ -1,5 +1,5 @@
 {
-"name": "@nextapp/meta",
-"main": "index.ts",
-"version": "1.0.0"
+	"name": "@nextapp/Meta",
+	"main": "index.ts",
+	"version":"1.0.0"
 }
