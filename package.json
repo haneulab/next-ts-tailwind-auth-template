@@ -16,6 +16,7 @@
         "build": "next build",
         "start": "next start",
         "lint": "next lint",
+        "nextuse": "nextuse --init",
         "format": "prettier --write \"./**/*.{ts,tsx}\"",
         "type-check": "tsc --pretty --noEmit",
         "prepare": "husky install"
