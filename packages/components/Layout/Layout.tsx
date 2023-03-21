@@ -1,18 +1,17 @@
-import { type ILayout } from './types'
 import dynamic from 'next/dynamic'
+import type { ILayout } from './Layout.types'
 
-const Meta = dynamic(() => import('./Meta'))
-const Header = dynamic(() => import('./Header'))
-const Footer = dynamic(() => import('./Footer'))
+const Header = dynamic(() => import('@nextapp/header'))
+const Footer = dynamic(() => import('@nextapp/footer'))
 
 const Layout = (props: ILayout) => {
     return (
         <>
-            <Meta />
             <Header />
-            {props.children ?? null}
+            {props.children}
             <Footer />
         </>
     )
 }
+
 export default Layout

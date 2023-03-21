@@ -1,4 +1,4 @@
-import App from '@nextjs-app/app'
+import App from '@nextapp/app'
 import '../styles/index.css'
 
 export default App

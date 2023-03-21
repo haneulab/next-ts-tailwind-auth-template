@@ -10,12 +10,8 @@ class MyDocument extends Document {
                         href="https://fonts.googleapis.com"
                     />
                     <link rel="preconnect" href="https://fonts.gstatic.com" />
-                    <link
-                        href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap"
-                        rel="stylesheet"
-                    />
                 </Head>
-                <body className="relative w-full text-white bg-black font-sand">
+                <body className="relative w-full">
                     <Main />
                     <NextScript />
                 </body>

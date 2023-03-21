@@ -1,5 +1,5 @@
 {
-    "name": "@nextjs-app/app",
+    "name": "@nextapp/app",
     "version": "1.0.0",
     "main": "index.ts"
 }
