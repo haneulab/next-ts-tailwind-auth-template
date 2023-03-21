@@ -1,3 +1,3 @@
 export interface IMeta {
-	id?: string
+    id?: string
 }
