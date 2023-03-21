@@ -1,4 +1,4 @@
-import { type AppPropsWithLayout } from './types'
+import { type AppPropsWithLayout } from './App.types'
 
 const App = (appProps: AppPropsWithLayout) => {
     const { Component, pageProps } = appProps

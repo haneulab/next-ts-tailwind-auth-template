@@ -1,9 +1,10 @@
+import type { NextPageWithLayout } from '@nextapp/app'
 import dynamic from 'next/dynamic'
 
 const Layout = dynamic(() => import('@nextapp/layout'))
 const Meta = dynamic(() => import('@nextapp/meta'))
 
-const Home = () => {
+const Home: NextPageWithLayout = () => {
     return (
         <>
             <Meta />
