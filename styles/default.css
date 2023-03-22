@@ -4,11 +4,3 @@ body {
     background: white;
     color: #000;
 }
-
-@media (prefers-color-scheme: dark) {
-    html,
-    body {
-        background: #000;
-        color: white;
-    }   
-}
