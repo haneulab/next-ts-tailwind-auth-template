@@ -1,2 +1,2 @@
-import {default as AuthLoadingSpinner} from "./AuthLoadingSpinner"
+import { default as AuthLoadingSpinner } from './AuthLoadingSpinner'
 export default AuthLoadingSpinner

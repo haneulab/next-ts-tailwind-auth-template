@@ -1,2 +1,2 @@
-import {default as FacebookLoginButton} from "./FacebookLoginButton"
+import { default as FacebookLoginButton } from './FacebookLoginButton'
 export default FacebookLoginButton
