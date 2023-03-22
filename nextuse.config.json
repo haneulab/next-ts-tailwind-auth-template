@@ -1,5 +1,6 @@
 {
     "root": ".",
+    "alias": "@nextapp",
     "pages": {
         "path": "pages",
         "asDir": true,
@@ -7,14 +8,14 @@
             "declaration": "arrow",
             "layout": {
                 "getLayout": true,
-                "importFrom": "@nextapp/Layout",
+                "importFrom": "^alias/Layout",
                 "dynamic": true
             },
             "serverSideProps": false
         }
     },
-    "packages": {
+    "components": {
         "path": "packages/components/^package",
-        "alias": "@nextapp/^package"
+        "alias": "^alias/^package"
     }
 }
