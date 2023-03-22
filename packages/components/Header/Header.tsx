@@ -14,6 +14,7 @@ const Header = (props: IHeader) => {
                 <div className="flex items-center gap-x-4">
                     <p> Hello! {session.user.name}</p>
                     <button onClick={() => signOut()}>Logout</button>
+                    <Link href={'/account'}>My Account</Link>
                 </div>
             )}
         </header>
