@@ -1,2 +1,2 @@
-import {default as GoogleLoginButton} from "./GoogleLoginButton"
+import { default as GoogleLoginButton } from './GoogleLoginButton'
 export default GoogleLoginButton

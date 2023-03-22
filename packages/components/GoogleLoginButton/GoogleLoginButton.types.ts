@@ -1,3 +1,3 @@
 export interface IGoogleLoginButton {
-	id?: string
+    id?: string
 }
