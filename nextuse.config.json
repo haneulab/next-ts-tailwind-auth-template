@@ -1,0 +1,20 @@
+{
+    "root": ".",
+    "pages": {
+        "path": "pages",
+        "asDir": true,
+        "pattern": {
+            "declaration": "arrow",
+            "layout": {
+                "getLayout": true,
+                "importFrom": "@nextapp/Layout",
+                "dynamic": true
+            },
+            "serverSideProps": false
+        }
+    },
+    "packages": {
+        "path": "packages/components/^package",
+        "alias": "@nextapp/^package"
+    }
+}
