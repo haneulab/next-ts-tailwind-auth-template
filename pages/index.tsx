@@ -8,7 +8,6 @@ const HomePage: NextPageWithLayout = () => {
     return (
         <>
             <Meta />
-            HomePage
         </>
     )
 }
