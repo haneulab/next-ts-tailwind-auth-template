@@ -1,0 +1,5 @@
+{
+	"name": "@nextapp/TwitterLoginButton",
+	"main": "index.ts",
+	"version":"1.0.0"
+}
