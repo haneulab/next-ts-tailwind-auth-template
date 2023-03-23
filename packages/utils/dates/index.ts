@@ -1,4 +1,4 @@
-type DateObject = {
+export type DateObject = {
     year?: number
     month?: [number, string]
     day?: [number, string]
@@ -7,6 +7,11 @@ type DateObject = {
         minute: number
         char: string
     }
+}
+
+export type DateMonthYear = {
+    month?: string
+    year?: string
 }
 
 function dates(_date: string, _option: 'string'): string
@@ -50,5 +55,36 @@ function dates(date: string, option: 'string' | 'object'): string | DateObject {
         }
     }
 }
+
+function formatDateDisplayer(dateObject: DateObject) {
+    let dateToDisplay: string[] = []
+
+    dateToDisplay = [dateObject.month[1]]
+
+    dateToDisplay = [...dateToDisplay, dateObject.day[0].toString()]
+
+    dateToDisplay = [
+        ...dateToDisplay,
+        ['20', dateObject.year.toString(), ','].join(''),
+    ]
+
+    dateToDisplay = [
+        'Events on',
+        ...dateToDisplay,
+        dateObject.day[1].slice(0, 3),
+    ]
+
+    return dateToDisplay.join(' ')
+}
+function formatDateMonthYearDispalyer(dateObject: DateObject) {
+    const dateMonthYear: DateMonthYear = { month: '', year: '' }
+
+    dateMonthYear.month = dateObject.month[1].slice(0, 3)
+    dateMonthYear.year = ['20', dateObject.year.toString()].join('')
+
+    return dateMonthYear
+}
+
+export { formatDateDisplayer, formatDateMonthYearDispalyer }
 
 export default dates
