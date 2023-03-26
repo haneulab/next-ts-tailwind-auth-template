@@ -6,13 +6,15 @@ const Meta = dynamic(() => import('@nextapp/Meta'))
 
 const Calendar = dynamic(() => import('@nextapp/Calendar'))
 const ContactForm = dynamic(() => import('@nextapp/ContactForm'))
+const AddressSearchBox = dynamic(() => import('@nextapp/AddressSearchBox'))
 
 const HomePage: NextPageWithLayout = () => {
     return (
         <>
             <Meta />
             {/* <Calendar /> */}
-            <ContactForm />
+            {/* <ContactForm /> */}
+            <AddressSearchBox />
         </>
     )
 }
