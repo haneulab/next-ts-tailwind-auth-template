@@ -1,2 +1,2 @@
-import {default as AddressSearchBox} from "./AddressSearchBox"
+import { default as AddressSearchBox } from './AddressSearchBox'
 export default AddressSearchBox
